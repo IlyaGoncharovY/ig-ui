@@ -1,0 +1,54 @@
+{
+  "name": "ig-ui",
+  "version": "1.0.0",
+  "description": "Custom UI_kit for React + TS",
+  "main": "./dist/index.esm.js",
+  "module": "./dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && rollup -c",
+    "style-lint": "npx stylelint '**/*.scss' '**/*.css'",
+    "eslint": "npx eslint .",
+    "pack-roject": "del /q *.tgz && npm pack"
+  },
+  "keywords": [
+    "ui-kit",
+    "scss",
+    "react",
+    "type-script"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.17.0",
+    "@ilya_goncharov_y/custom-stylelint": "^1.0.8",
+    "@ilya_goncharov_y/customeslint": "^1.0.10",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-url": "^8.0.2",
+    "@types/react": "18.3.17",
+    "@types/react-dom": "18.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "@typescript-eslint/parser": "^8.18.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.29.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "sass": "^1.83.0",
+    "stylelint": "^16.12.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}
