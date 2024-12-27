@@ -1,6 +1,6 @@
 {
   "name": "ig-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom UI_kit for React + TS",
   "main": "./dist/index.esm.js",
   "module": "./dist/index.js",
