@@ -28,3 +28,5 @@ package-lock.json
 
 # Tarballs
 *.tgz
+
+*storybook.log

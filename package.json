@@ -14,7 +14,9 @@
     "build": "npm run clean && rollup -c",
     "style-lint": "npx stylelint '**/*.scss' '**/*.css'",
     "eslint": "npx eslint .",
-    "pack-roject": "del /q *.tgz && npm pack"
+    "pack-roject": "del /q *.tgz && npm pack",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "keywords": [
     "ui-kit",
@@ -25,16 +27,25 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.3",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.17.0",
     "@ilya_goncharov_y/custom-stylelint": "^1.0.8",
     "@ilya_goncharov_y/customeslint": "^1.0.10",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-url": "^8.0.2",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
     "@types/react": "18.3.17",
     "@types/react-dom": "18.3.5",
     "@typescript-eslint/eslint-plugin": "^8.18.1",
     "@typescript-eslint/parser": "^8.18.1",
+    "css-loader": "^5.2.6",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "rimraf": "^6.0.1",
@@ -44,11 +55,16 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.83.0",
+    "sass-loader": "^10.1.1",
+    "storybook": "^8.4.7",
+    "style-loader": "^2.0.0",
     "stylelint": "^16.12.0",
     "stylelint-config-standard-scss": "^14.0.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "url-loader": "^4.1.1"
   },
   "dependencies": {
-    "react": "^18.3.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
