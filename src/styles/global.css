@@ -1,0 +1,29 @@
+:root {
+  /* Общие цвета */
+  --primary-color: #4a4a4a;
+  --hover-color: #6d6d6d;
+  --disabled-color: #9e9e9e;
+  --text-color: #cfcd76;
+  --border-color: #6a5f5f;
+  --background-color: #be6bf1;
+
+  /* Отступы */
+  --padding-sm: 0.5rem;
+  --padding-md: 1rem;
+  --padding-lg: 2rem;
+  --margin-sm: 0.5rem;
+  --margin-md: 1rem;
+  --margin-lg: 2rem;
+
+  /* Размеры шрифтов */
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --line-height: 1.5;
+  --font-family: 'Arial, sans-serif';
+
+  /* Анимация */
+  --background-width: 0%;
+  --current-length: 0;
+  --max-length: 1;
+}

@@ -1,0 +1,46 @@
+.buttonContainer {
+  color: var(--text-color, #cfcd76);
+  background-color: var(--primary-color, #4a4a4a);
+  border: 1px solid var(--border-color, #6a5f5f);
+  padding: var(--padding-md, 1rem);
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+          background-color 0.3s,
+          color 0.3s,
+          transform 0.1s ease-in-out,
+          box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+
+  &:hover {
+    background-color: var(--hover-color, #6d6d6d);
+    box-shadow: 0 6px 8px rgb(0 0 0 / 15%);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+  }
+
+  &:disabled {
+    background-color: var(--disabled-color, #9e9e9e);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+/* Размеры кнопок */
+.small {
+  padding: var(--padding-sm, 0.5rem);
+  font-size: var(--font-size-sm, 14px);
+}
+
+.medium {
+  padding: var(--padding-md, 1rem);
+  font-size: var(--font-size-md, 16px);
+}
+
+.large {
+  padding: var(--padding-lg, 2rem);
+  font-size: var(--font-size-lg, 20px);
+}
