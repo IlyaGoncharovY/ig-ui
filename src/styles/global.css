@@ -7,24 +7,23 @@
   --border-color: #6a5f5f;
   --background-color: #be6bf1;
 
-  /* Общие параметры интервалов и типографики */
-  --padding: 1rem;
-  --margin: 1rem;
-  --font-size: 16px;
+  /* Отступы */
+  --padding-sm: 0.5rem;
+  --padding-md: 1rem;
+  --padding-lg: 2rem;
+  --margin-sm: 0.5rem;
+  --margin-md: 1rem;
+  --margin-lg: 2rem;
+
+  /* Размеры шрифтов */
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
   --line-height: 1.5;
   --font-family: 'Arial, sans-serif';
+
+  /* Анимация */
   --background-width: 0%;
-}
-
-/* Общие миксины */
-.typography {
-  font-size: var(--font-size);
-  line-height: var(--line-height);
-  font-family: var(--font-family), sans-serif;
-  color: var(--text-color);
-}
-
-.spacing {
-  padding: var(--padding);
-  margin: var(--margin);
+  --current-length: 0;
+  --max-length: 1;
 }
