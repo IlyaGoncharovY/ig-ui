@@ -1,0 +1,30 @@
+.animateBgContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--background-width, 0%);
+    height: 100%;
+    background-color: var(--background-color, #4a4a4a);
+    content: '';
+    transition: width 0.3s ease;
+  }
+
+  input {
+    position: relative;
+    color: var(--text-color, #8c6a6a);
+    background: transparent;
+    font-size: 1.5rem;
+    padding: var(--padding, 1rem);
+    border: 1px solid var(--border-color, #6d6d6d);
+    border-radius: 5px;
+    text-align: center;
+  }
+}
