@@ -1,0 +1,30 @@
+:root {
+  /* Общие цвета */
+  --primary-color: #4a4a4a;
+  --hover-color: #6d6d6d;
+  --disabled-color: #9e9e9e;
+  --text-color: #cfcd76;
+  --border-color: #6a5f5f;
+  --background-color: #be6bf1;
+
+  /* Общие параметры интервалов и типографики */
+  --padding: 1rem;
+  --margin: 1rem;
+  --font-size: 16px;
+  --line-height: 1.5;
+  --font-family: 'Arial, sans-serif';
+  --background-width: 0%;
+}
+
+/* Общие миксины */
+.typography {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-family: var(--font-family), sans-serif;
+  color: var(--text-color);
+}
+
+.spacing {
+  padding: var(--padding);
+  margin: var(--margin);
+}
