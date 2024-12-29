@@ -1,8 +1,13 @@
+import path from 'path';
+
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
-import {dts} from 'rollup-plugin-dts';
+import { dts } from 'rollup-plugin-dts';
 import url from '@rollup/plugin-url';
+import {glob} from 'glob';
+
+const componentFiles = glob.sync('./src/components/*/index.ts');
 
 export default [
   {
@@ -32,13 +37,39 @@ export default [
       url(),
     ],
   },
+
+  ...componentFiles.map((input) => ({
+    input,
+    output: [
+      {
+        file: `./dist/components/${path.basename(path.dirname(input))}/index.js`,
+        format: 'esm',
+      },
+    ],
+    external: ['react'],
+    plugins: [
+      typescript({
+        tsconfig: './tsconfig.json',
+      }),
+      postcss({
+        modules: true,
+        minimize: true,
+        use: ['sass'],
+      }),
+      terser(),
+    ],
+  })),
+
   {
     input: './dist/index.d.ts',
-    output: [{
-      file: './dist/index.d.ts',
-      format: 'esm',
-    }],
+    output: [
+      {
+        file: './dist/index.d.ts',
+        format: 'esm',
+      },
+    ],
     external: [/\.(css|scss)$/],
     plugins: [dts()],
   },
 ];
+
