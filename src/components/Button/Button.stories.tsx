@@ -9,6 +9,7 @@ export default {
   args: {
     children: 'Click me',
     disabled: false,
+    size: 'medium',
   },
   parameters: {
     controls: {
@@ -17,10 +18,33 @@ export default {
   },
 } as Meta<ButtonStoryProps>;
 
-type ButtonStoryProps = Pick<ButtonProps, 'className' | 'children'>
+type ButtonStoryProps = ButtonProps;
 
-export const ButtonStoryTemplate: StoryFn<ButtonStoryProps> = ({...args}) => (
-  <Button {...args} />
-);
+/**
+ * Шаблон для Storybook.
+ */
+const Template: StoryFn<ButtonStoryProps> = (args) => <Button {...args} />;
 
-ButtonStoryTemplate.storyName = 'Button';
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
+  children: 'Small Button',
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  size: 'medium',
+  children: 'Medium Button',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
+  children: 'Large Button',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+  children: 'Disabled Button',
+};

@@ -25,3 +25,23 @@ export const EmailInput: StoryFn<AnimateBGProps> = (args) => (
   <AnimateBG {...args} inputType="email" />
 );
 EmailInput.storyName = 'Email Input';
+
+export const CustomInput: StoryFn<AnimateBGProps> = (args) => (
+  <AnimateBG
+    {...args}
+    customInput={
+      <input
+        className="custom-input"
+        placeholder="Type something..."
+        style={{
+          border: '2px solid #6d6d6d',
+          borderRadius: '4px',
+          padding: '0.5rem',
+          fontSize: '1rem',
+          textAlign: 'center',
+        }}
+      />
+    }
+  />
+);
+CustomInput.storyName = 'Custom Input';
