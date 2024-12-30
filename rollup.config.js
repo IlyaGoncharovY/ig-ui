@@ -22,7 +22,7 @@ export default [
         format: 'esm',
       },
     ],
-    external: ['react'],
+    external: ['react', 'clsx'],
     plugins: [
       typescript({
         tsconfig: './tsconfig.json',
@@ -46,7 +46,7 @@ export default [
         format: 'esm',
       },
     ],
-    external: ['react'],
+    external: ['react', 'clsx'],
     plugins: [
       typescript({
         tsconfig: './tsconfig.json',
