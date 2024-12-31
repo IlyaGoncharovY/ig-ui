@@ -5,11 +5,10 @@
     "emitDeclarationOnly": true,
     "declarationDir": "./dist/types",
     "outDir": "./dist",
-    "moduleResolution": "Node16",
-    "module": "Node16",
-    "paths": {
-      "goncharov-ui/*": ["./dist/*"]
-    }
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.stories.tsx", "node_modules"]
 }

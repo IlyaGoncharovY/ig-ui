@@ -11,9 +11,10 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && npm run build:code && npm run build:types",
     "build:code": "node esbuild.config.js",
     "build:types": "tsc -p tsconfig.build.json",
+    "postbuild": "node postbuild.js",
+    "build": "npm run clean && npm run build:code && npm run build:types && npm run postbuild",
     "style-lint": "npx stylelint '**/*.scss' '**/*.css'",
     "eslint": "npx eslint .",
     "pack-project": "npm run build && del /q *.tgz && npm pack",
@@ -40,6 +41,7 @@
   "license": "ISC",
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.17.0",
     "@ilya_goncharov_y/custom-stylelint": "^1.0.8",

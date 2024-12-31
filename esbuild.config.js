@@ -4,7 +4,9 @@ import esbuild from 'esbuild';
 import { glob } from 'glob';
 import stylePlugin from 'esbuild-style-plugin';
 
-const componentFiles = glob.sync('./src/components/*/index.ts');
+const componentFiles = glob
+  .sync('./src/components/*/index.ts')
+  .filter((file) => !file.endsWith('.stories.tsx'));
 
 const buildComponent = (entry) => {
   const componentName = path.basename(path.dirname(entry));
