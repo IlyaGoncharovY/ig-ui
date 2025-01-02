@@ -49,7 +49,9 @@ const App = () => (
 
 ### 2) Подключение стилей
 
- **Не требуется**
+```tsx
+import 'goncharov-ui/index.css';
+````
 
 ---
 
