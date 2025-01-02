@@ -23,21 +23,23 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/components/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./Button": {
+      "types": "./dist/components/Button/index.d.ts",
       "import": "./dist/components/Button/index.js",
-      "require": "./dist/components/Button/index.js",
-      "types": "./dist/components/Button/index.d.ts"
+      "require": "./dist/components/Button/index.js"
     },
     "./AnimateBG": {
+      "types": "./dist/components/AnimateBG/index.d.ts",
       "import": "./dist/components/AnimateBG/index.js",
-      "require": "./dist/components/AnimateBG/index.js",
-      "types": "./dist/components/AnimateBG/index.d.ts"
+      "require": "./dist/components/AnimateBG/index.js"
     },
-    "./styles": "./dist/index.css"
+    "./index.css": {
+      "default": "./dist/index.css"
+    }
   },
   "keywords": [
     "ui-kit",

@@ -10,6 +10,7 @@ const componentFiles = glob
 
 const buildComponent = (entry) => {
   const componentName = path.basename(path.dirname(entry));
+  console.log(componentName);
   return esbuild.build({
     entryPoints: [entry],
     bundle: true,
