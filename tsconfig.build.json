@@ -5,7 +5,7 @@
     "emitDeclarationOnly": true,
     "declarationDir": "./dist/types",
     "outDir": "./dist",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "module": "ESNext",
     "skipLibCheck": true
   },
