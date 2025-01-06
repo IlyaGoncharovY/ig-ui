@@ -40,7 +40,7 @@ yarn add goncharov-ui
  **Избирательный импорт**
 
 ```tsx
-import { Button } from 'goncharov-ui/Button';
+import { Button } from 'goncharov-ui/components/Button';
 
 const App = () => (
   <Button size="small">Small Button</Button>

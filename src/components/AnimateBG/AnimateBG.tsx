@@ -32,7 +32,7 @@ export interface AnimateBGProps {
  * @param {React.ReactElement} [customInput] - Кастомный компонент для ввода.
  * @returns {JSX.Element} Контейнер для ввода анимированного фона.
  * @example
- * import { AnimateBG } from "goncharov-ui/AnimateBG";
+ * import { AnimateBG } from "goncharov-ui/components/AnimateBG";
  *
  * // Пример использования с кастомным input:
  * <AnimateBG

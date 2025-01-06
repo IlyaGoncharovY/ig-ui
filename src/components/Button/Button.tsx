@@ -23,7 +23,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  * @returns {JSX.Element} Стилизованный компонент кнопки.
  * @example
  * // Пример использования:
- * import {Button} from "goncharov-ui/Button";
+ * import {Button} from "goncharov-ui/components/Button";
  * <Button size="large" onClick={() => console.log('Clicked!')}>
  *   Click Me
  * </Button>
