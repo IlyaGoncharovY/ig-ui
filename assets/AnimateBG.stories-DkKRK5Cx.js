@@ -1,11 +1,11 @@
-import{r as v,R as t}from"./index-BpYrhlGc.js";const B="_animateBgContainer_1bfji_1",_={animateBgContainer:B},o=({inputLength:e=4,backgroundColor:T="#4a4a4a",inputType:b="text",customInput:m})=>{const[x,A]=v.useState(0),u=L=>{A(L.currentTarget.value.length)};return t.createElement("div",{className:_.animateBgContainer,style:{"--background-width":`${x/e*100}%`,"--background-color":T}},m?t.cloneElement(m,{onChange:u,maxLength:e}):t.createElement("input",{type:b,maxLength:e,onChange:u}))};o.__docgenInfo={description:`AnimateBG компонент для интерактивного ввода фоновой анимации.
+import{r as v,R as t}from"./index-C2WPW1L7.js";const B="_animateBgContainer_1bfji_1",_={animateBgContainer:B},o=({inputLength:e=4,backgroundColor:T="#4a4a4a",inputType:b="text",customInput:m})=>{const[x,A]=v.useState(0),u=L=>{A(L.currentTarget.value.length)};return t.createElement("div",{className:_.animateBgContainer,style:{"--background-width":`${x/e*100}%`,"--background-color":T}},m?t.cloneElement(m,{onChange:u,maxLength:e}):t.createElement("input",{type:b,maxLength:e,onChange:u}))};o.__docgenInfo={description:`AnimateBG компонент для интерактивного ввода фоновой анимации.
 @param {number} [inputLength=4] - Максимальная длина поля ввода.
 @param {string} [backgroundColor='#4a4a4a'] - Цвет фона анимированной панели.
 @param {React.HTMLInputTypeAttribute} [inputType='text'] - Тип поля ввода.
 @param {React.ReactElement} [customInput] - Кастомный компонент для ввода.
 @returns {JSX.Element} Контейнер для ввода анимированного фона.
 @example
-import { AnimateBG } from "goncharov-ui/AnimateBG";
+import { AnimateBG } from "goncharov-ui/components/AnimateBG";
 
 // Пример использования с кастомным input:
 <AnimateBG
