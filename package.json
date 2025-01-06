@@ -1,6 +1,6 @@
 {
   "name": "goncharov-ui",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Custom UI_kit for React + TS",
   "main": "./dist/index.esm.js",
   "module": "./dist/index.js",
