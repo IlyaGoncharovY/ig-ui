@@ -61,7 +61,7 @@ import 'goncharov-ui/index.css';
 
 **Пример использования:**
 ```tsx
-import { Button } from 'goncharov-ui/Button';
+import { Button } from 'goncharov-ui/components/Button';
 
 <Button size="medium" onClick={() => console.log('Clicked!')}>
   Click Me
@@ -82,7 +82,7 @@ import { Button } from 'goncharov-ui/Button';
 
 **Пример использования:**
 ```tsx
-import {AnimateBG} from "goncharov-ui/AnimateBG";
+import {AnimateBG} from "goncharov-ui/components/AnimateBG";
 
 <AnimateBG inputLength={6} backgroundColor="#d4af37" inputType="text" />
 ```
