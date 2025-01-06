@@ -23,7 +23,7 @@ export interface CircleCanvasProps {
 
     /**
      * Цвет снежинок.
-     * @default {'rgba(173, 184, 197, 0.7)'}
+     * @default {'#6d6d6d'}
      */
     color?: string;
 
@@ -39,7 +39,7 @@ export interface CircleCanvasProps {
  * @param {number} [radius=5] - Радиус снежинок.
  * @param {number} [speedY=1] - Скорость падения снежинок.
  * @param {number} [speedX=0.5] - Горизонтальная скорость движения снежинок.
- * @param {string} [color='rgba(173, 184, 197, 0.7)'] - Цвет снежинок.
+ * @param {string} [color='#6d6d6d'] - Цвет снежинок.
  * @param {number} [monthMarker] - Месяц, когда компонент будет отрисовываться.
  * Если не указан, компонент отображается всегда.
  * @returns {JSX.Element | null} Canvas с анимацией снежинок.
@@ -49,11 +49,11 @@ export interface CircleCanvasProps {
  * // Пример использования:
  * // props опцинальны
  * <CircleCanvas
- *   radius={8} - Радиус снежинок.
- *   speedY={8} - Скорость падения снежинок.
- *   speedX={8} - Горизонтальная скорость движения снежинок.
- *   color={8} - Цвет снежинок.
- *   joke={4} - Месяц, когда компонент будет отрисовываться.
+ *   radius={5} - Радиус снежинок.
+ *   speedY={1} - Скорость падения снежинок.
+ *   speedX={0.5} - Горизонтальная скорость движения снежинок.
+ *   color={'#6d6d6d'} - Цвет снежинок.
+ *   monthMarker={4} - Месяц, когда компонент будет отрисовываться.
  *   Если не указан, компонент отображается всегда.
  * />
  */
@@ -169,6 +169,6 @@ export const CircleCanvas: FC<CircleCanvasProps> = ({
     <canvas
       ref={canvasRef}
       className={s.circleContainer}
-    ></canvas>
+    />
   );
 };
