@@ -91,7 +91,7 @@ export const FileUpload: FC<FileUploadProps> = ({
   styles = {},
 }: FileUploadProps): JSX.Element => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [isUploading, setIsUploading] = useState(false);
+  const [isUploading, setIsUploading] = useState<boolean>(false);
   const [uploadStatus, setUploadStatus] = useState<'success' | 'error' | null>(null);
   const [uploadError, setUploadError] = useState<unknown>(null);
 
