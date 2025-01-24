@@ -23,4 +23,17 @@ import {CircleCanvas} from "goncharov-ui/components/CircleCanvas";
 @default {1}`,defaultValue:{value:"1",computed:!1}},speedX:{required:!1,tsType:{name:"number"},description:`Горизонтальная скорость движения снежинок.
 @default {0.5}`,defaultValue:{value:"0.5",computed:!1}},color:{required:!1,tsType:{name:"string"},description:`Цвет снежинок.
 @default {'#6d6d6d'}`,defaultValue:{value:"'#6d6d6d'",computed:!1}},monthMarker:{required:!1,tsType:{name:"number"},description:`Месяц, когда компонент будет отрисовываться.
-Если не указан, компонент отображается всегда.`}}};const D={title:"components/CircleCanvas",component:p,args:{radius:10,speedY:2,speedX:1,color:"#6d6d6d",monthMarker:void 0}},f=d=>q.createElement(p,{...d}),s=f.bind({});s.args={};const o=f.bind({});o.args={radius:15,speedY:3,color:"rgba(0, 255, 255, 0.6)"};const i=f.bind({});i.args={monthMarker:11};var b,x,y;s.parameters={...s.parameters,docs:{...(b=s.parameters)==null?void 0:b.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(y=(x=s.parameters)==null?void 0:x.docs)==null?void 0:y.source}}};var E,M,X;o.parameters={...o.parameters,docs:{...(E=o.parameters)==null?void 0:E.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(X=(M=o.parameters)==null?void 0:M.docs)==null?void 0:X.source}}};var k,R,_;i.parameters={...i.parameters,docs:{...(k=i.parameters)==null?void 0:k.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(_=(R=i.parameters)==null?void 0:R.docs)==null?void 0:_.source}}};const I=["Default","CustomSnowflakes","OnlyInDecember"];export{o as CustomSnowflakes,s as Default,i as OnlyInDecember,I as __namedExportsOrder,D as default};
+Если не указан, компонент отображается всегда.
+@example
+0 === Январь
+1 === Февраль
+2 === Март
+3 === Апрель
+4 === Май
+5 === Июнь
+6 === Июль
+7 === Август
+8 === Сентябрь
+9 === Октябрь
+10 === Ноябрь
+11 === Декабрь`}}};const D={title:"components/CircleCanvas",component:p,args:{radius:10,speedY:2,speedX:1,color:"#6d6d6d",monthMarker:void 0}},f=d=>q.createElement(p,{...d}),s=f.bind({});s.args={};const o=f.bind({});o.args={radius:15,speedY:3,color:"rgba(0, 255, 255, 0.6)"};const i=f.bind({});i.args={monthMarker:11};var b,x,y;s.parameters={...s.parameters,docs:{...(b=s.parameters)==null?void 0:b.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(y=(x=s.parameters)==null?void 0:x.docs)==null?void 0:y.source}}};var E,M,X;o.parameters={...o.parameters,docs:{...(E=o.parameters)==null?void 0:E.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(X=(M=o.parameters)==null?void 0:M.docs)==null?void 0:X.source}}};var k,R,_;i.parameters={...i.parameters,docs:{...(k=i.parameters)==null?void 0:k.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(_=(R=i.parameters)==null?void 0:R.docs)==null?void 0:_.source}}};const I=["Default","CustomSnowflakes","OnlyInDecember"];export{o as CustomSnowflakes,s as Default,i as OnlyInDecember,I as __namedExportsOrder,D as default};
