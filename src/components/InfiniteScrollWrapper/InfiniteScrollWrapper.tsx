@@ -1,5 +1,7 @@
-import React, { ReactNode, HTMLAttributes, useEffect, useRef } from 'react';
+import React, {HTMLAttributes, ReactNode} from 'react';
 import clsx from 'clsx';
+
+import {useInfiniteScrollWrapper} from './hook/useInfiniteScrollWrapper';
 
 import s from './InfiniteScrollWrapper.module.css';
 
@@ -76,26 +78,8 @@ export const InfiniteScrollWrapper = <T,>({
   className,
   ...props
 }: InfiniteScrollWrapperProps<T>): JSX.Element => {
-  const observerRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const currentRef = observerRef.current;
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && hasMore) {
-        loadMore();
-      }
-    });
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [loadMore, hasMore]);
+  const {observerRef} = useInfiniteScrollWrapper({hasMore, loadMore});
 
   return (
     <div className={clsx(s.infiniteScrollContainer, className)} {...props}>
