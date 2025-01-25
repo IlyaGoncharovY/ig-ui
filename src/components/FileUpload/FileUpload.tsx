@@ -1,5 +1,7 @@
-import React, { ChangeEvent, FC, useRef, useState, ReactNode } from 'react';
+import React, {FC, ReactNode} from 'react';
 import clsx from 'clsx';
+
+import {useFileUpload} from './hook/useFileUpload';
 
 import s from './FileUpload.module.css';
 
@@ -90,44 +92,9 @@ export const FileUpload: FC<FileUploadProps> = ({
   uploadButtonLabel = 'Загрузить',
   styles = {},
 }: FileUploadProps): JSX.Element => {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [isUploading, setIsUploading] = useState<boolean>(false);
-  const [uploadStatus, setUploadStatus] = useState<'success' | 'error' | null>(null);
-  const [uploadError, setUploadError] = useState<unknown>(null);
 
-  const inputRef = useRef<HTMLInputElement | null>(null);
-
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files.length > 0) {
-      setSelectedFile(event.target.files[0]);
-      onUploadProgress?.(null);
-      setUploadStatus(null);
-      setUploadError(null);
-      event.target.value = '';
-    }
-  };
-
-  const handleUpload = async () => {
-    if (!selectedFile) return alert('Выберите файл для загрузки!');
-
-    setIsUploading(true);
-    onUploadStart?.();
-
-    try {
-      await uploadRequest(selectedFile, (progress) => {
-        onUploadProgress?.(progress);
-      });
-      setUploadStatus('success');
-      onUploadSuccess?.();
-    } catch (error) {
-      setUploadError(error);
-      setUploadStatus('error');
-      onUploadError?.(error);
-    } finally {
-      setIsUploading(false);
-      setSelectedFile(null);
-    }
-  };
+  const { inputRef, selectedFile, isUploading, uploadStatus, uploadError, handleFileChange, handleUpload,
+  } = useFileUpload({ uploadRequest, onUploadStart, onUploadProgress, onUploadSuccess, onUploadError});
 
   const renderFeedback = () => {
     if (uploadStatus === 'success') {
