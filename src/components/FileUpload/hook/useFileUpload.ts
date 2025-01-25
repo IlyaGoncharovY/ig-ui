@@ -1,18 +1,20 @@
 import { useState, useRef, ChangeEvent } from 'react';
 
+import {Nullable} from '../common/types/CommonTypesForFileUpload';
+
 interface UseFileUploadParams {
     uploadRequest: (file: File, onProgress: (progress: number) => void) => Promise<void>;
     onUploadStart?: () => void;
-    onUploadProgress?: (progress: number | null) => void;
+    onUploadProgress?: (progress: Nullable<number>) => void;
     onUploadSuccess?: () => void;
     onUploadError?: (error: unknown) => void;
 }
 
 interface UseFileUploadResult {
   inputRef: React.RefObject<HTMLInputElement>;
-  selectedFile: File | null;
+  selectedFile: Nullable<File>;
   isUploading: boolean;
-  uploadStatus: 'success' | 'error' | null;
+  uploadStatus: Nullable<'success' | 'error'>;
   uploadError: unknown | null;
   handleFileChange: (event: ChangeEvent<HTMLInputElement>) => void;
   handleUpload: () => Promise<void>;
@@ -94,12 +96,12 @@ export const useFileUpload = ({
   onUploadSuccess,
   onUploadError,
 }: UseFileUploadParams): UseFileUploadResult => {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedFile, setSelectedFile] = useState<Nullable<File>>(null);
   const [isUploading, setIsUploading] = useState<boolean>(false);
-  const [uploadStatus, setUploadStatus] = useState<'success' | 'error' | null>(null);
+  const [uploadStatus, setUploadStatus] = useState<Nullable<'success' | 'error'>>(null);
   const [uploadError, setUploadError] = useState<unknown>(null);
 
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<Nullable<HTMLInputElement>>(null);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {

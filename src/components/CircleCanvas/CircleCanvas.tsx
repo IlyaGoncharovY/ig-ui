@@ -1,4 +1,7 @@
-import React, {FC, useCallback, useEffect, useRef} from 'react';
+import React, {FC} from 'react';
+
+import {useCircleCanvas} from './hook/useCircleCanvas';
+import {MonthType} from './common/types/CommonTypesForCircleCanvas';
 
 import s from './CircleCanvas.module.css';
 
@@ -44,7 +47,7 @@ export interface CircleCanvasProps {
      * 10 === Ноябрь
      * 11 === Декабрь
      */
-    monthMarker?: number;
+    monthMarker?: MonthType;
 }
 
 /**
@@ -53,7 +56,7 @@ export interface CircleCanvasProps {
  * @param {number} [speedY=1] - Скорость падения снежинок.
  * @param {number} [speedX=0.5] - Горизонтальная скорость движения снежинок.
  * @param {string} [color='#6d6d6d'] - Цвет снежинок.
- * @param {number} [monthMarker] - Месяц, когда компонент будет отрисовываться.
+ * @param {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11} [monthMarker] - Месяц, когда компонент будет отрисовываться.
  * Если не указан, компонент отображается всегда.
  * @returns {JSX.Element | null} Canvas с анимацией снежинок.
  * @example
@@ -78,103 +81,10 @@ export const CircleCanvas: FC<CircleCanvasProps> = ({
   color = '#6d6d6d',
   monthMarker,
 }:CircleCanvasProps): JSX.Element | null => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const circles = useRef<any[]>([]);
-  const animationFrameId = useRef<number | null>(null);
 
-  // Условный рендеринг в зависимости от месяца
-  const currentMonth = new Date().getMonth();
-  const shouldRender = monthMarker === undefined || monthMarker === currentMonth;
-
-  const createCircle = useCallback(() => ({
-    x: Math.random() * window.innerWidth,
-    y: -50,
-    radius: Math.random() * radius + 5,
-    speedY: Math.random() * speedY,
-    speedX: Math.random() * speedX,
-    offsetX: 0,
-  }), [radius, speedY, speedX]);
-
-  const animate = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const context = canvas.getContext('2d');
-    if (!context) return;
-
-    context.clearRect(0, 0, canvas.width, canvas.height);
-
-    circles.current.forEach((circle) => {
-      circle.y += circle.speedY;
-      circle.offsetX += circle.speedX;
-      circle.x += Math.sin(circle.offsetX / 50) * 2;
-
-      context.beginPath();
-      context.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
-      context.fillStyle = color;
-      context.fill();
-      context.closePath();
-    });
-
-    circles.current = circles.current.filter(
-      (circle) => circle.y < window.innerHeight + 50,
-    );
-
-    if (Math.random() < 0.02) {
-      circles.current.push(createCircle());
-    }
-
-    animationFrameId.current = requestAnimationFrame(animate);
-  }, [color, createCircle]);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const context = canvas.getContext('2d');
-    if (!context) return;
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!shouldRender) return;
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-    };
-  }, [shouldRender]);
-
-  useEffect(() => {
-    if (!shouldRender) return;
-
-    animationFrameId.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrameId.current) {
-        cancelAnimationFrame(animationFrameId.current);
-      }
-    };
-  }, [shouldRender, animate]);
+  const {shouldRender, canvasRef} = useCircleCanvas({
+    monthMarker, radius, speedY, speedX, color,
+  });
 
   if (!shouldRender) return null;
 

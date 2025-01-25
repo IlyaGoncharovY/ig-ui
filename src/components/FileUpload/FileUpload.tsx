@@ -1,15 +1,18 @@
 import React, {FC, ReactNode} from 'react';
 import clsx from 'clsx';
 
+import {Button} from '../Button';
+
 import {useFileUpload} from './hook/useFileUpload';
+import {Nullable} from './common/types/CommonTypesForFileUpload';
 
 import s from './FileUpload.module.css';
 
 export interface FileUploadProps {
     uploadRequest: (file: File, onProgress: (progress: number) => void) => Promise<void>;
     onUploadStart?: () => void;
-    onUploadProgress?: (progress: number | null) => void;
-    uploadProgress?: number | null;
+    onUploadProgress?: (progress: Nullable<number>) => void;
+    uploadProgress?: Nullable<number>;
     onUploadSuccess?: () => void;
     onUploadError?: (error: unknown) => void;
     renderSuccess?: ReactNode | ((file: File) => ReactNode);
@@ -126,14 +129,14 @@ export const FileUpload: FC<FileUploadProps> = ({
           onChange={handleFileChange}
           className={s.hiddenInput}
         />
-        <button
-          type="button"
-          onClick={() => inputRef.current?.click()}
+        <Button
+          size="medium"
           className={clsx(s.buttonLabel)}
+          onClick={() => inputRef.current?.click()}
           style={styles.button}
         >
           {buttonLabel}
-        </button>
+        </Button>
         {selectedFile && (
           <p
             className={clsx(s.fileName)}
@@ -142,15 +145,15 @@ export const FileUpload: FC<FileUploadProps> = ({
               Выбран файл: {selectedFile.name}
           </p>
         )}
-        <button
-          type="button"
+        <Button
+          size="medium"
+          className={clsx(s.buttonUpload)}
           onClick={handleUpload}
           disabled={isUploading || !selectedFile}
-          className={clsx(s.buttonUpload, {[s.disabled]: isUploading || !selectedFile})}
           style={styles.button}
         >
           {isUploading ? 'Загрузка...' : uploadButtonLabel}
-        </button>
+        </Button>
       </div>
       {uploadProgress !== null && (
         <div
