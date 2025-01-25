@@ -29,5 +29,7 @@ CustomSnowflakes.args = {
 
 export const OnlyInDecember = Template.bind({});
 OnlyInDecember.args = {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   monthMarker: 11, // Отрисовывать только в декабре
 };
