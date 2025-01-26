@@ -3,11 +3,13 @@
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": true,
-    "declarationDir": "./dist/types",
+    "declarationDir": "./dist",
     "outDir": "./dist",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "module": "ESNext",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*"],
   "exclude": ["src/**/*.stories.tsx", "node_modules"]

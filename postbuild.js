@@ -3,43 +3,23 @@ import path from 'path';
 
 import { glob } from 'glob';
 
-const typesDir = './dist/types';
-const componentsDir = './dist/components';
+const distDir = './dist';
+const typesDir = `${distDir}/types`;
 
 const files = glob.sync(`${typesDir}/**/*.d.ts`);
 
-const fixPaths = (file) => {
-  let content = fs.readFileSync(file, 'utf8');
-  content = content.replace(/(from\s+['"])(\.\.?\/[^'"]+)(['"])/g, '$1$2.js$3');
-  fs.writeFileSync(file, content, 'utf8');
-  console.log(`Processed: ${file}`);
-};
-
-const moveFile = (src, dest) => {
-  const destDir = path.dirname(dest);
-  if (!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir, { recursive: true });
-  }
-  fs.renameSync(src, dest);
-  console.log(`Moved: ${src} -> ${dest}`);
-};
-
 files.forEach((file) => {
-  fixPaths(file);
-
   const relativePath = path.relative(typesDir, file);
+  const destPath = path.resolve(distDir, relativePath);
+  const dir = path.dirname(destPath);
 
-  const cleanPath = relativePath.split(path.sep)
-    .filter((segment, index) => !(index === 0 && segment === 'components'))
-    .join(path.sep);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
 
-  console.log(`>>>> Final Calculated Path: ${cleanPath}`);
-  const targetPath = path.resolve(componentsDir, cleanPath);
-
-  moveFile(file, targetPath);
+  fs.renameSync(file, destPath);
 });
 
 if (fs.existsSync(typesDir)) {
   fs.rmSync(typesDir, { recursive: true });
-  console.log(`Removed: ${typesDir}`);
 }
