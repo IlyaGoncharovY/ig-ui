@@ -46,7 +46,7 @@ export interface FileUploadProps {
  * ```tsx
  * import React, { useState } from 'react';
  * import axios from 'axios';
- * import { FileUpload } from 'goncharov-ui/components/FileUpload';
+ * import { FileUpload } from 'goncharov-ui/dist/components/FileUpload';
  *
  * const uploadFileWithAxios = async (file: File, onProgress: (progress: number) => void) => {
  *   const formData = new FormData();
