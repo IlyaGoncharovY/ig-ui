@@ -40,7 +40,7 @@ yarn add goncharov-ui
  **Избирательный импорт**
 
 ```tsx
-import { Button } from 'goncharov-ui/components/Button';
+import { Button } from 'goncharov-ui/dist/components/Button';
 
 const App = () => (
   <Button size="small">Small Button</Button>
@@ -50,7 +50,7 @@ const App = () => (
 ### 2) Подключение стилей
 
 ```tsx
-import 'goncharov-ui/index.css';
+import 'goncharov-ui/dist/index.css';
 ````
 
 ---
@@ -61,7 +61,7 @@ import 'goncharov-ui/index.css';
 
 **Пример использования:**
 ```tsx
-import { Button } from 'goncharov-ui/components/Button';
+import { Button } from 'goncharov-ui/dist/components/Button';
 
 <Button size="medium" onClick={() => console.log('Clicked!')}>
   Click Me
@@ -82,7 +82,7 @@ import { Button } from 'goncharov-ui/components/Button';
 
 **Пример использования:**
 ```tsx
-import {AnimateBG} from "goncharov-ui/components/AnimateBG";
+import {AnimateBG} from "goncharov-ui/dist/components/AnimateBG";
 
 <AnimateBG inputLength={6} backgroundColor="#d4af37" inputType="text" />
 ```

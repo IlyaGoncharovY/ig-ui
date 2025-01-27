@@ -1,6 +1,6 @@
 {
   "name": "goncharov-ui",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "Custom UI_kit for React + TS",
   "main": "./dist/index.esm.js",
   "module": "./dist/index.js",
@@ -20,22 +20,6 @@
     "pack-project": "npm run build && del /q *.tgz && npm pack",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "default": "./dist/index.js"
-    },
-    "./components/*": {
-      "types": "./dist/components/*/index.d.ts",
-      "import": "./dist/components/*/index.js",
-      "require": "./dist/components/*/index.js"
-    },
-    "./index.css": {
-      "default": "./dist/index.css"
-    }
   },
   "keywords": [
     "ui-kit",
