@@ -60,7 +60,7 @@ export interface CircleCanvasProps {
  * Если не указан, компонент отображается всегда.
  * @returns {JSX.Element | null} Canvas с анимацией снежинок.
  * @example
- * import {CircleCanvas} from "goncharov-ui/components/CircleCanvas";
+ * import {CircleCanvas} from "goncharov-ui/dist/components/CircleCanvas";
  *
  * // Пример использования:
  * // props опцинальны

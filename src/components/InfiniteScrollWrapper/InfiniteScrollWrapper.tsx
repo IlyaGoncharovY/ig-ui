@@ -39,7 +39,7 @@ export interface InfiniteScrollWrapperProps<T> extends HTMLAttributes<HTMLDivEle
  * @returns {JSX.Element} Компонент обёртки с бесконечным скроллом.
  * @example
  * // Пример использования:
- * import { InfiniteScrollWrapper } from 'goncharov-ui/components/InfiniteScrollWrapper';
+ * import { InfiniteScrollWrapper } from 'goncharov-ui/dist/components/InfiniteScrollWrapper';
  * import { useState } from 'react';
  *
  * const App = () => {
