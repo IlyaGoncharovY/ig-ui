@@ -8,7 +8,7 @@ import{r as c,R as o}from"./index-C2WPW1L7.js";import{c as g}from"./clsx-B-dksMZ
 @returns {JSX.Element} Компонент обёртки с бесконечным скроллом.
 @example
 // Пример использования:
-import { InfiniteScrollWrapper } from 'goncharov-ui/components/InfiniteScrollWrapper';
+import { InfiniteScrollWrapper } from 'goncharov-ui/dist/components/InfiniteScrollWrapper';
 import { useState } from 'react';
 
 const App = () => {

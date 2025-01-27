@@ -6,7 +6,7 @@ import{R as n}from"./index-C2WPW1L7.js";import{c as o}from"./clsx-B-dksMZM.js";c
 @returns {JSX.Element} Стилизованный компонент кнопки.
 @example
 // Пример использования:
-import {Button} from "goncharov-ui/components/Button";
+import {Button} from "goncharov-ui/dist/components/Button";
 <Button size="large" onClick={() => console.log('Clicked!')}>
   Click Me
 </Button>`,methods:[],displayName:"Button",props:{className:{required:!1,tsType:{name:"string"},description:"Дополнительные CSS классы для кнопки.",defaultValue:{value:"''",computed:!1}},size:{required:!1,tsType:{name:"union",raw:"'small' | 'medium' | 'large'",elements:[{name:"literal",value:"'small'"},{name:"literal",value:"'medium'"},{name:"literal",value:"'large'"}]},description:"Размер кнопки: small, medium или large.",defaultValue:{value:"'medium'",computed:!1}}},composes:["ButtonHTMLAttributes"]};export{c as B};

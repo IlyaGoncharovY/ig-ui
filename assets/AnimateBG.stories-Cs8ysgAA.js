@@ -5,7 +5,7 @@ import{r as v,R as t}from"./index-C2WPW1L7.js";const B="_animateBgContainer_1bfj
 @param {React.ReactElement} [customInput] - Кастомный компонент для ввода.
 @returns {JSX.Element} Контейнер для ввода анимированного фона.
 @example
-import { AnimateBG } from "goncharov-ui/components/AnimateBG";
+import { AnimateBG } from "goncharov-ui/dist/components/AnimateBG";
 
 // Пример использования с кастомным input:
 <AnimateBG

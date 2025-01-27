@@ -7,7 +7,7 @@ import{r as n,R as q}from"./index-C2WPW1L7.js";const z=({monthMarker:t,radius:c,
 Если не указан, компонент отображается всегда.
 @returns {JSX.Element | null} Canvas с анимацией снежинок.
 @example
-import {CircleCanvas} from "goncharov-ui/components/CircleCanvas";
+import {CircleCanvas} from "goncharov-ui/dist/components/CircleCanvas";
 
 // Пример использования:
 // props опцинальны
@@ -36,4 +36,4 @@ import {CircleCanvas} from "goncharov-ui/components/CircleCanvas";
 8 === Сентябрь
 9 === Октябрь
 10 === Ноябрь
-11 === Декабрь`}}};const I={title:"components/CircleCanvas",component:C,args:{radius:10,speedY:2,speedX:1,color:"#6d6d6d",monthMarker:void 0}},g=t=>q.createElement(C,{...t}),l=g.bind({});l.args={};const u=g.bind({});u.args={radius:15,speedY:3,color:"rgba(0, 255, 255, 0.6)"};const d=g.bind({});d.args={monthMarker:11};var b,x,E;l.parameters={...l.parameters,docs:{...(b=l.parameters)==null?void 0:b.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(E=(x=l.parameters)==null?void 0:x.docs)==null?void 0:E.source}}};var y,M,R;u.parameters={...u.parameters,docs:{...(y=u.parameters)==null?void 0:y.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(R=(M=u.parameters)==null?void 0:M.docs)==null?void 0:R.source}}};var X,k,_;d.parameters={...d.parameters,docs:{...(X=d.parameters)==null?void 0:X.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(_=(k=d.parameters)==null?void 0:k.docs)==null?void 0:_.source}}};const F=["Default","CustomSnowflakes","OnlyInDecember"];export{u as CustomSnowflakes,l as Default,d as OnlyInDecember,F as __namedExportsOrder,I as default};
+11 === Декабрь`}}};const I={title:"components/CircleCanvas",component:C,args:{radius:10,speedY:2,speedX:1,color:"#6d6d6d",monthMarker:void 0}},g=t=>q.createElement(C,{...t}),l=g.bind({});l.args={};const d=g.bind({});d.args={radius:15,speedY:3,color:"rgba(0, 255, 255, 0.6)"};const u=g.bind({});u.args={monthMarker:11};var b,x,E;l.parameters={...l.parameters,docs:{...(b=l.parameters)==null?void 0:b.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(E=(x=l.parameters)==null?void 0:x.docs)==null?void 0:E.source}}};var y,M,R;d.parameters={...d.parameters,docs:{...(y=d.parameters)==null?void 0:y.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(R=(M=d.parameters)==null?void 0:M.docs)==null?void 0:R.source}}};var X,k,_;u.parameters={...u.parameters,docs:{...(X=u.parameters)==null?void 0:X.docs,source:{originalSource:"args => <CircleCanvas {...args} />",...(_=(k=u.parameters)==null?void 0:k.docs)==null?void 0:_.source}}};const F=["Default","CustomSnowflakes","OnlyInDecember"];export{d as CustomSnowflakes,l as Default,u as OnlyInDecember,F as __namedExportsOrder,I as default};
